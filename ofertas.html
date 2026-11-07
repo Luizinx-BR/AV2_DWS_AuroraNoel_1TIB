@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Aurora Noel: uma loja natalina cheia de presentes, sabores e decoração."
+        />
+        <title>Aurora Noel | Ofertas</title>
+        <link rel="icon" href="img/logo.png" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/responsivo.css" />
+        <link rel="stylesheet" href="css/paginas.css" />
+        <link rel="stylesheet" href="css/acabamento.css" />
+        <link rel="stylesheet" href="css/evolucao.css" />
+        <link rel="stylesheet" href="css/rolagem.css">
+<link rel="stylesheet" href="css/compra-controles.css">
+<link rel="stylesheet" href="css/animacoes.css">
+    <script src="js/efeitos.js"></script>
+    <link rel="stylesheet" href="css/efeitos.css">
+</head>
+    <body class="pagina-ofertas">
+        <header>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Árvore natalina da Aurora Noel" />
+                <span>Aurora Noel</span>
+            </a>
+            <button
+                id="botao-musica"
+                class="botao-musica"
+                type="button"
+                aria-label="Ativar música natalina"
+                aria-pressed="false"
+            >
+                🔇
+            </button>
+            <nav class="menu" aria-label="Menu principal">
+                <a href="index.html">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="sobre.html">Sobre nós</a>
+                <a href="ofertas.html" class="ativo" aria-current="page">Ofertas</a>
+                <a href="contato.html">Contato</a>
+                <a href="colecao.html">Coleção</a>
+                <a href="confeitaria.html">Nossa Confeitaria</a>
+            </nav>
+            <div class="cordao-natalino" aria-hidden="true"></div>
+        </header>
+        <main>
+            <section class="black-hero">
+                <div class="black-selo">AURORA NOEL • EDIÇÃO ESPECIAL</div>
+                <p class="black-eyebrow">O NATAL CHEGOU MAIS CEDO</p>
+                <h1>
+                    BLACK
+                    <br />
+                    <span>NOEL</span>
+                </h1>
+                <p>Super ofertas para encher sua sacola de boas escolhas.</p>
+                <div class="desconto-hero">
+                    ATÉ
+                    <strong>50%</strong>
+                    OFF
+                </div>
+                <a class="botao-banner" href="#vitrine-ofertas">Explorar super ofertas ↓</a>
+            </section>
+            <div class="faixa-black">PRESENTES • MODA • DOCES • DECORAÇÃO • PERFUMES</div>
+            <section class="pagina-bloco black-vitrine" id="vitrine-ofertas">
+                <div class="vitrine-topo">
+                    <div>
+                        <span class="sobretitulo">SELEÇÃO BLACK NOEL</span>
+                        <h2>Achados que merecem destaque</h2>
+                    </div>
+                    <label>
+                        Categoria
+                        <select id="oferta-categoria">
+                            <option value="todos">Todas</option>
+                            <option value="confeitaria">Confeitaria</option>
+                            <option value="moda">Moda</option>
+                            <option value="perfumes">Perfumes</option>
+                            <option value="decoracao">Decoração</option>
+                            <option value="presentes">Presentes</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="black-controles">
+                    <label for="oferta-pesquisa">Buscar oferta
+                        <input id="oferta-pesquisa" type="search" placeholder="Digite o nome do produto">
+                    </label>
+                    <label for="oferta-ordem">Ordenar por
+                        <select id="oferta-ordem">
+                            <option value="padrao">Padrão</option>
+                            <option value="menor-preco">Menor preço</option>
+                            <option value="maior-preco">Maior preço</option>
+                        </select>
+                    </label>
+                </div>
+                <p id="ofertas-total" class="resultado-lista" role="status"></p>
+                <div id="vitrine-promocoes" class="vitrine-grid"></div>
+                <div id="ofertas-vazio" class="vazio-natalino" role="status" hidden>
+                    <span class="presente-vazio" aria-hidden="true">🎁</span>
+                    <h3>Nenhum produto encontrado</h3>
+                    <p>O Papai Noel ainda não encontrou essa oferta! Tente outro nome ou categoria.</p>
+                    <button id="ofertas-limpar" type="button">Limpar filtros</button>
+                </div>
+                <p class="nota-catalogo">
+                    Campanha ilustrativa do projeto Aurora Noel. Descontos aplicados sobre os preços
+                    de referência do catálogo.
+                </p>
+            </section>
+        </main>
+        <footer class="rodape">
+            <div class="rodape-container">
+                <div class="rodape-coluna">
+                    <a href="index.html" class="rodape-logo">
+                        <img src="img/logo.png" alt="" />
+                        <span>Aurora Noel</span>
+                    </a>
+                    <p>
+                        Espalhando a magia do Natal com presentes, sabores e momentos inesquecíveis.
+                    </p>
+                </div>
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="sobre.html">Sobre nós</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+                <div class="rodape-coluna">
+                    <h3>Explore</h3>
+                    <a href="ofertas.html">Ofertas</a>
+                    <a href="colecao.html">Coleção</a>
+                    <a href="confeitaria.html">Nossa Confeitaria</a>
+                </div>
+                <div class="rodape-coluna">
+                    <h3>Espírito Natalino</h3>
+                    <p>Que a alegria, o amor e a esperança iluminem o seu Natal!</p>
+                    <span class="rodape-emojis">🎄 ⭐ 🎁 🔔</span>
+                </div>
+            </div>
+            <div class="rodape-inferior"><p>&copy; 2026 Aurora Noel.</p></div>
+        </footer>
+        <audio id="musica-natal" src="audio/natal.mp3" preload="none"></audio>
+        <audio id="som-sino" src="audio/sino.mp3" preload="none"></audio>
+        <script src="js/script.js"></script>
+        <script src="js/dados-produtos.js"></script>
+        <script src="js/vitrines.js"></script>
+        <script src="js/rolagem.js"></script>
+</body>
+</html>

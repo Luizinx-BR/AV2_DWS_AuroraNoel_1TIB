@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta
+            name="description"
+            content="Conheça o catálogo encantado da Aurora Noel. Presentes, decoração, perfumes, moda e confeitaria para o Natal."
+        />
+
+        <title>Produto | Aurora Noel</title>
+
+        <link rel="icon" href="img/logo.png" />
+
+        <!-- ESTILOS -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/produtos.css" />
+        <link rel="stylesheet" href="css/responsivo.css" />
+        <link rel="stylesheet" href="css/acabamento.css" />
+        <link rel="stylesheet" href="css/evolucao.css" />
+        <link rel="stylesheet" href="css/rolagem.css">
+<link rel="stylesheet" href="css/detalhe-produto.css"><link rel="stylesheet" href="css/compra-controles.css">
+<link rel="stylesheet" href="css/animacoes.css">
+    <script src="js/efeitos.js"></script>
+    <link rel="stylesheet" href="css/efeitos.css">
+</head>
+
+    <body class="pagina-produtos">
+        <!-- ======================================
+         CABEÇALHO
+    ======================================= -->
+
+        <header>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Logo Aurora Noel" />
+                <span>Aurora Noel</span>
+            </a>
+
+            <!-- MÚSICA NATALINA -->
+            <button
+                id="botao-musica"
+                class="botao-musica"
+                type="button"
+                aria-label="Ativar música natalina"
+                aria-pressed="false"
+            >
+                🔇
+            </button>
+
+            <!-- BOTÃO DA SACOLA -->
+            <button
+                id="abrir-sacola"
+                class="botao-sacola"
+                type="button"
+                aria-label="Abrir sacola de compras"
+                aria-controls="painel-sacola"
+                aria-expanded="false"
+            >
+                🛍️ Sacola
+                <span id="contador-sacola">0</span>
+            </button>
+
+            <!-- MENU PRINCIPAL -->
+            <nav class="menu" aria-label="Menu principal">
+                <a href="index.html">Início</a>
+                <a href="produtos.html" class="ativo" aria-current="page">Produtos</a>
+                <a href="sobre.html">Sobre nós</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="contato.html">Contato</a>
+                <a href="colecao.html">Coleção</a>
+                <a href="confeitaria.html">Nossa Confeitaria</a>
+            </nav>
+        </header>
+
+        <!-- ======================================
+         CONTEÚDO PRINCIPAL
+    ======================================= -->
+
+        <main class="pagina-detalhe">
+<a class="voltar-catalogo" href="produtos.html">← Voltar aos produtos</a>
+<div id="detalhe-produto"></div>
+</main>
+
+        <!-- ======================================
+         RODAPÉ
+    ======================================= -->
+
+        <footer class="rodape">
+            <div class="rodape-container">
+                <div class="rodape-coluna">
+                    <a href="index.html" class="rodape-logo">
+                        <img src="img/logo.png" alt="Logo Aurora Noel" />
+                        <span>Aurora Noel</span>
+                    </a>
+
+                    <p>
+                        Espalhando a magia do Natal por meio de presentes, sabores e momentos
+                        inesquecíveis.
+                    </p>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="sobre.html">Sobre nós</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Explore</h3>
+
+                    <a href="ofertas.html">Ofertas</a>
+                    <a href="colecao.html">Coleção</a>
+                    <a href="confeitaria.html">Nossa Confeitaria</a>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Espírito Natalino</h3>
+
+                    <p>Que a alegria, o amor e a esperança iluminem o seu Natal!</p>
+
+                    <span class="rodape-emojis">🎄 ⭐ 🎁 🔔</span>
+                </div>
+            </div>
+
+            <div class="rodape-final">
+                <p>&copy; 2026 Aurora Noel. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+        <!-- ======================================
+     SACOLA DE COMPRAS
+======================================= -->
+
+        <div id="fundo-sacola" class="fundo-sacola" hidden></div>
+
+        <aside
+            id="painel-sacola"
+            class="painel-sacola"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-sacola"
+            hidden
+        >
+            <div class="sacola-cabecalho">
+                <h2 id="titulo-sacola">🛍️ Minha Sacola</h2>
+
+                <button id="fechar-sacola" type="button" aria-label="Fechar sacola">✖</button>
+            </div>
+
+            <div id="itens-sacola" class="itens-sacola"></div>
+
+            <div class="sacola-rodape">
+                <div class="sacola-total">
+                    <span>Total:</span>
+                    <strong id="total-sacola">R$ 0,00</strong>
+                </div>
+
+                <button id="finalizar-compra" type="button">🎁 Finalizar Compra</button>
+
+                <button id="esvaziar-sacola" type="button">Esvaziar Sacola</button>
+            </div>
+        </aside>
+
+        <!-- ======================================
+         ÁUDIOS
+    ======================================= -->
+
+        <audio id="musica-natal" src="audio/natal.mp3"></audio>
+        <audio id="som-sino" src="audio/sino.mp3"></audio>
+
+        <!-- ======================================
+         JAVASCRIPT
+    ======================================= -->
+
+        <script src="js/script.js"></script>
+        <script src="js/categoria-inicial.js"></script>
+        <script src="js/dados-produtos.js"></script>
+        <script src="js/detalhe-produto.js"></script>
+
+        <dialog id="checkout" class="checkout-dialog" aria-labelledby="checkout-titulo">
+            <button
+                id="fechar-checkout"
+                class="checkout-fechar"
+                aria-label="Fechar pagamento"
+                type="button"
+            >
+                ×
+            </button>
+            <span class="sobretitulo">SUA SACOLA DE NATAL</span>
+            <h2 id="checkout-titulo">Finalizar pedido</h2>
+            <ul id="checkout-itens" class="checkout-resumo"></ul>
+            <p>Total do pedido</p>
+            <div id="checkout-total" class="checkout-total"></div>
+            <label class="checkout-metodo">
+                <input type="radio" name="pagamento" value="pix" checked />
+                Pix · QR Code
+            </label>
+            <img
+                class="checkout-qr"
+                src="img/qr-pix-ilustrativo.svg"
+                alt="QR Code ilustrativo do checkout, sem chave Pix e sem cobrança"
+            />
+            <p class="checkout-nota">
+                QR ilustrativo: não realiza pagamento. Nenhuma chave Pix foi cadastrada.
+            </p>
+            <button id="confirmar-pedido" type="button" class="botao-banner">Confirmar</button>
+        </dialog>
+        <dialog id="celebracao" class="celebracao-dialog" aria-labelledby="titulo-celebracao">
+            <canvas id="fogos-celebracao" aria-hidden="true"></canvas>
+            <div class="celebracao-conteudo celebracao-conteudo-limpo">
+                <img src="img/logo.png" alt="" />
+                <h2 id="titulo-celebracao">Feliz Natal!</h2>
+                <button id="continuar-comprando" class="botao-banner" type="button">
+                    Continuar explorando
+                </button>
+            </div>
+        </dialog>
+        <script src="js/sacola-detalhe.js"></script>
+        <script src="js/checkout.js"></script>
+        <script src="js/rolagem.js"></script>
+</body>
+</html>

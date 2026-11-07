@@ -1,0 +1,26 @@
+/* Imagens reais em planos independentes; mantém a paleta original. */
+.cena-fixa{min-height:0;height:100svh;background:#082c31}
+.cena-plano{inset:0;width:100%;height:100%;max-width:none;left:0;object-fit:cover!important}
+.cena-montanhas{transform-origin:center center}
+.cena-pinheiros{object-position:center bottom;z-index:3}
+.cena-fixa::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(2,23,28,.25),rgba(2,23,28,.12) 55%,transparent)}
+.cena-titulo{z-index:4;top:15%;text-shadow:0 2px 18px #001d25}
+.cena-titulo h1{font-size:clamp(38px,5.5vw,76px)}
+.cena-titulo p{color:#fff;line-height:1.5}
+.cena-dica{color:#fff;z-index:4;text-shadow:0 1px 6px #002c30}
+.revelar-rolagem{opacity:0;translate:0 25px;transition:opacity .65s ease,translate .65s ease;transition-delay:var(--atraso,0ms)}
+.revelar-rolagem.visivel{opacity:1;translate:0 0}
+@media(max-width:600px){.cena-titulo{top:14%;width:90%}.cena-titulo h1{font-size:40px;letter-spacing:-1px}.cena-titulo p{font-size:14px}.cena-plano{width:100%;left:0}.cena-pinheiros{object-fit:contain!important;object-position:bottom}.cena-percurso{height:165svh}}
+
+
+.cena-titulo{top:18%}.cena-titulo h1{color:#183f43;text-shadow:0 1px 12px #ffffffaa}.cena-pinheiros{opacity:.35;height:36%;top:auto;object-fit:cover!important}.cena-fixa::after{background:transparent}
+
+/* Correções v21: parallax visível, preservando a arte original dos Smurfs. */
+.pagina-index .cena-percurso{height:180svh;min-height:980px}
+.pagina-index .cena-fixa{position:sticky;top:0;height:100svh;min-height:0;overflow:hidden}
+.pagina-index .cena-montanhas{z-index:1;transform-origin:center center;will-change:transform}
+.pagina-index .cena-pinheiros{z-index:3;opacity:.82;height:38%;top:auto;bottom:0;object-fit:cover!important;object-position:center bottom;transform-origin:center bottom;will-change:transform;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.4) 40%,#000 84%);mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.4) 40%,#000 84%)}
+.pagina-index .cena-titulo{z-index:4;will-change:transform,opacity}
+.pagina-index .cena-fixa::after{background:linear-gradient(180deg,rgba(0,24,29,.10),transparent 60%);pointer-events:none}
+@media(max-width:600px){.pagina-index .cena-percurso{height:160svh;min-height:800px}.pagina-index .cena-pinheiros{height:27%;opacity:.75}.pagina-index .cena-titulo{top:15%}}
+

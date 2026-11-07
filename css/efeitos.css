@@ -1,0 +1,109 @@
+/* v22: animações ativadas independentemente das preferências do Windows,
+   com controle manual acessível para pausar todos os efeitos. */
+.controle-efeitos{position:fixed;bottom:18px;left:17px;z-index:2147483645;background:#074b3f;color:#fff4d6;border:2px solid #e2bd64;border-radius:999px;padding:10px 15px;font-size:13px;font-weight:700;line-height:1.1;cursor:pointer;box-shadow:0 6px 20px #0006;max-width:205px}
+.controle-efeitos:hover{background:#0b6653}.controle-efeitos:focus-visible{outline:3px solid #ffe08a;outline-offset:3px}
+.cena-fixa{isolation:isolate}
+.pagina-index .cena-montanhas{z-index:1}
+.pagina-index .cena-pinheiros{z-index:3;height:39%;opacity:.85}
+.cena-fixa .fogos-home{z-index:3;top:9%;height:68%;width:34%;position:absolute;pointer-events:none;opacity:1;background:none}
+.cena-fixa .fogos-home-esquerda{left:0;right:auto}
+.cena-fixa .fogos-home-direita{right:0;left:auto}
+.pagina-index .cena-titulo{z-index:5}
+.efeitos-ativos .entrada-card,.efeitos-ativos .entrada-suave{will-change:transform,opacity;backface-visibility:hidden;transform-origin:50% 75%}
+.efeitos-ativos .entrada-card{opacity:0;transform:translate3d(var(--entrada-x,0),var(--entrada-y,28px),0) scale(var(--entrada-escala,.975)) rotate(var(--entrada-rot,-.7deg));transition:opacity .42s ease-out,transform .58s cubic-bezier(.22,.61,.36,1);transition-delay:var(--entrada-atraso,0ms)}
+.efeitos-ativos .entrada-suave{opacity:0;transform:translate3d(var(--entrada-x,0),var(--entrada-y,20px),0) scale(var(--entrada-escala,.992)) rotate(var(--entrada-rot,0deg));transition:opacity .4s ease-out,transform .54s cubic-bezier(.22,.61,.36,1);transition-delay:var(--entrada-atraso,0ms)}
+.efeitos-ativos .entrada-concluida{opacity:1;transform:translate3d(0,0,0) scale(1) rotate(0deg)}
+.efeitos-pausados *, .efeitos-pausados *::before, .efeitos-pausados *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.efeitos-pausados .entrada-card,.efeitos-pausados .entrada-suave{opacity:1!important;translate:none!important;rotate:none!important;scale:1!important}
+.efeitos-pausados .treno-rolagem,.efeitos-pausados #neve-site,.efeitos-pausados .fogos-home{display:none!important}
+.efeitos-pausados .pagina-index .cena-percurso{height:auto;min-height:0}
+.efeitos-pausados .pagina-index .cena-fixa{position:relative;height:92svh}
+@media(max-width:650px){.controle-efeitos{font-size:11px;bottom:10px;left:9px;padding:8px 11px}.cena-fixa .fogos-home{height:52%;top:20%}.pagina-index .cena-pinheiros{height:27%}}
+/* Em celulares, o enquadramento prioriza os personagens da aldeia. */
+@media(max-width:650px){.pagina-index .cena-montanhas{object-position:88% center}}
+
+
+.cena-subtitulo{margin:12px auto 20px;max-width:48ch;color:#fff7e8;font-size:1.05rem;line-height:1.5;text-shadow:0 3px 14px rgba(0,0,0,.35)}
+.contador-cena{margin:0 auto 22px;gap:14px;max-width:760px}
+.tempo-cena{width:min(130px,22vw);min-width:96px;padding:16px 10px;background:linear-gradient(180deg,rgba(9,48,39,.78),rgba(4,28,22,.7));backdrop-filter:blur(8px);border-color:#f0c96d;box-shadow:0 18px 34px rgba(0,0,0,.18),0 0 0 1px rgba(255,230,177,.06) inset}
+.tempo-cena span{font-size:clamp(1.7rem,3.4vw,2.35rem)}
+.tempo-cena p{font-size:.74rem;letter-spacing:1.6px;margin-top:8px}
+@media(max-width:780px){.contador-cena{gap:10px}.tempo-cena{width:calc(50% - 10px);max-width:140px;min-width:0;padding:13px 8px}.cena-subtitulo{font-size:.98rem}}
+@media(max-width:500px){.contador-cena{gap:8px}.tempo-cena span{font-size:1.45rem}.tempo-cena p{font-size:.67rem;letter-spacing:1.2px}}
+
+/* v28: os nomes pertencem ao card e nunca ficam transparentes ou deslocados. */
+.pagina-index .categorias-container .categoria-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.pagina-index .categorias-container .categoria-card > img {
+    flex: 0 0 auto;
+}
+.pagina-index .categorias-container .categoria-card > h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+    min-height: 44px;
+    margin: 10px 0 2px;
+    padding: 6px 4px;
+    color: #ffe6a1;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    translate: none !important;
+    rotate: none !important;
+    scale: 1 !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,.22);
+}
+@media (max-width:650px) {
+    .pagina-index .categorias-container .categoria-card > h3 {
+        min-height: 38px;
+        margin: 6px 0 0;
+        padding: 5px 2px;
+        font-size: 16px;
+    }
+}
+
+/* Ajuste mobile: na Home, somente DIAS e HORAS no contador. */
+@media (max-width: 600px) {
+    .pagina-index .contador.contador-cena {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        justify-content: center;
+        gap: 12px;
+        width: min(100%, 276px);
+        max-width: 276px;
+        margin: 0 auto 20px;
+    }
+
+    .pagina-index .contador-cena > .tempo.tempo-cena {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        min-height: 86px;
+        box-sizing: border-box;
+        padding: 13px 10px;
+    }
+
+    .pagina-index .contador-cena > .tempo-cena span {
+        font-size: 1.65rem;
+    }
+
+    .pagina-index .contador-cena > .tempo-cena p {
+        margin-top: 5px;
+        font-size: .7rem;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+
+    .pagina-index .contador-cena > .tempo-cena:nth-child(3),
+    .pagina-index .contador-cena > .tempo-cena:nth-child(4) {
+        display: none;
+    }
+}

@@ -1,0 +1,436 @@
+/* Estilos complementares das páginas preenchidas, mantendo a identidade do site original. */
+.pagina-titulo {
+    padding: 78px 7%;
+    text-align: center;
+    background: linear-gradient(135deg, #d62828, #87151d);
+    border-bottom: 3px solid #d6a33d;
+    color: #fff0b3;
+}
+.pagina-titulo > span {
+    display: inline-block;
+    padding: 8px 17px;
+    border: 1px solid #d6a33d;
+    border-radius: 25px;
+    background: #006b4f;
+    color: #ffe08a;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.pagina-titulo h1 {
+    margin: 20px 0;
+    color: #ffe08a;
+    font-size: clamp(36px, 5vw, 60px);
+    text-shadow: 0 4px 15px #0005;
+}
+.pagina-titulo p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #fff;
+}
+.pagina-bloco {
+    padding: 70px 6%;
+    background: linear-gradient(180deg, #87151d, #7d1420);
+    text-align: center;
+    color: #fff0b3;
+}
+.pagina-bloco h2 {
+    color: #ffe08a;
+    font-size: clamp(28px, 3.6vw, 42px);
+    margin-bottom: 16px;
+}
+.pagina-bloco p {
+    line-height: 1.7;
+    color: #fff;
+}
+.sobre-bloco,
+.confeitaria-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    text-align: left;
+}
+.sobre-bloco img,
+.confeitaria-intro img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    border: 3px solid #d6a33d;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #0004;
+}
+.sobre-bloco > div,
+.confeitaria-intro > div {
+    max-width: 620px;
+}
+.sobre-bloco .botao-banner,
+.confeitaria-intro .botao-banner {
+    margin-top: 15px;
+}
+.titulo-central {
+    text-align: center;
+    margin: 0 auto 35px;
+}
+.pagina-cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.pagina-cartoes article {
+    padding: 18px;
+    background: #006b4f;
+    border: 2px solid #d6a33d;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px #0003;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+.pagina-cartoes article:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px #0005;
+}
+.pagina-cartoes article > span {
+    font-size: 42px;
+}
+.pagina-cartoes h3 {
+    color: #ffe08a;
+    font-size: 22px;
+    margin: 12px 0;
+}
+.pagina-cartoes a {
+    display: inline-block;
+    color: #ffe08a;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.equipe {
+    background: linear-gradient(180deg, #a71922, #7d1420);
+}
+.pagina-titulo-ofertas,
+.pagina-titulo-colecao {
+    background: linear-gradient(135deg, #006b4f, #003d2d);
+}
+.pagina-titulo-confeitaria {
+    background: linear-gradient(135deg, #7d1420, #d62828);
+}
+.oferta-intro {
+    background: linear-gradient(135deg, #006b4f, #004b37);
+    padding: 48px 6%;
+}
+.oferta-intro .botao-banner {
+    margin-top: 10px;
+}
+.oferta-cartoes article,
+.colecao-cartoes article,
+.doces-cartoes article {
+    padding: 12px 12px 20px;
+}
+.oferta-cartoes img,
+.colecao-cartoes img,
+.doces-cartoes img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #d6a33d;
+    cursor: zoom-in;
+}
+.oferta-cartoes a {
+    color: #ffe08a;
+}
+.galeria {
+    background: linear-gradient(180deg, #7d1420, #a71922);
+}
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.galeria-grid button {
+    padding: 10px;
+    background: #006b4f;
+    color: #ffe08a;
+    border: 2px solid #d6a33d;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: zoom-in;
+}
+.galeria-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.galeria-grid span {
+    display: block;
+    padding: 10px 0 2px;
+}
+.lightbox {
+    width: min(850px, 94vw);
+    border: 3px solid #d6a33d;
+    border-radius: 18px;
+    background: #006b4f;
+    color: #ffe08a;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+.lightbox::backdrop {
+    background: #000b;
+}
+.lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+    margin: 10px auto;
+    border-radius: 12px;
+}
+.fechar-lightbox {
+    display: block;
+    margin-left: auto;
+    border: 0;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    background: #d6a33d;
+    color: #003d2d;
+    font-size: 24px;
+    cursor: pointer;
+}
+.contato-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    text-align: left;
+    gap: 45px;
+}
+.contato-informacoes {
+    max-width: 500px;
+    margin: auto;
+}
+.form-contato {
+    display: grid;
+    gap: 10px;
+    max-width: 680px;
+    width: 100%;
+    margin: auto;
+    padding: 28px;
+    background: #006b4f;
+    border: 2px solid #d6a33d;
+    border-radius: 20px;
+}
+.form-contato label {
+    color: #ffe08a;
+    font-weight: bold;
+}
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid #d6a33d;
+    border-radius: 10px;
+    background: #fff;
+    color: #222;
+    font-size: 16px;
+}
+.form-contato button {
+    justify-self: start;
+    margin-top: 8px;
+    cursor: pointer;
+}
+#mensagem-form {
+    min-height: 25px;
+    margin: 3px 0;
+    color: #ffe08a;
+    font-weight: bold;
+}
+#mensagem-form.erro {
+    color: #ffd0d0;
+}
+#mensagem-form.sucesso {
+    color: #b9ffd9;
+}
+.pagina-contagem {
+    margin: 0;
+}
+.colecao-final {
+    background: linear-gradient(135deg, #006b4f, #003d2d);
+}
+.doces-cartoes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+    .pagina-cartoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .doces-cartoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sobre-bloco,
+    .confeitaria-intro,
+    .contato-layout {
+        grid-template-columns: 1fr;
+    }
+    .sobre-bloco img,
+    .confeitaria-intro img {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+    .galeria-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .pagina-titulo {
+        padding: 55px 6%;
+    }
+    .pagina-titulo p {
+        font-size: 16px;
+    }
+    .pagina-bloco {
+        padding: 50px 5%;
+    }
+    .pagina-cartoes,
+    .doces-cartoes,
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+    .oferta-cartoes img,
+    .colecao-cartoes img,
+    .doces-cartoes img {
+        height: 240px;
+    }
+    .form-contato {
+        padding: 20px;
+    }
+    .sobre-bloco,
+    .confeitaria-intro {
+        gap: 28px;
+    }
+}
+
+/* Slideshow e parallax incluídos como continuação da Home original. */
+.slideshow-home {
+    padding: 65px 6%;
+    background: linear-gradient(180deg, #7d1420, #a71922);
+    text-align: center;
+    color: #fff0b3;
+}
+.slideshow-home-cabecalho > span {
+    color: #ffe08a;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.slideshow-home-cabecalho h2 {
+    color: #ffe08a;
+    font-size: clamp(28px, 3.5vw, 42px);
+    margin: 12px 0 30px;
+}
+.slideshow-home-janela {
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid #d6a33d;
+    border-radius: 24px;
+    background: #006b4f;
+}
+.slide-home {
+    display: none;
+    align-items: center;
+    gap: 38px;
+    text-align: left;
+    padding: 24px;
+}
+.slide-home.ativo {
+    display: flex;
+    animation: slideAurora 0.55s ease;
+}
+.slide-home img {
+    width: 45%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #d6a33d;
+}
+.slide-home span {
+    color: #ffe08a;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.slide-home h3 {
+    font-size: clamp(24px, 3vw, 36px);
+    color: #ffe08a;
+    margin: 12px 0;
+}
+.slide-home p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #fff;
+}
+.slide-home a {
+    display: inline-block;
+    color: #ffe08a;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.slideshow-home-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 18px;
+}
+.slideshow-home-controles button {
+    width: 42px;
+    height: 42px;
+    border: 2px solid #d6a33d;
+    border-radius: 50%;
+    background: #006b4f;
+    color: #ffe08a;
+    font-size: 18px;
+    cursor: pointer;
+}
+.slideshow-home-controles button:hover {
+    background: #d6a33d;
+    color: #003d2d;
+}
+@keyframes slideAurora {
+    from {
+        opacity: 0.45;
+        transform: translateX(12px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@media (max-width: 700px) {
+    .slide-home.ativo {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+    }
+    .slide-home img {
+        width: 100%;
+        height: 230px;
+    }
+    .slideshow-home {
+        padding: 48px 5%;
+    }
+    .slide-home {
+        padding: 15px;
+    }
+    .slide-home p {
+        font-size: 15px;
+    }
+}

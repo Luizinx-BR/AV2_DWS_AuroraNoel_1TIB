@@ -1,0 +1,73 @@
+/* Acabamento sobre o modelo original: paleta e estrutura preservadas. */
+img {
+    object-fit: contain !important;
+    object-position: center;
+    max-width: 100%;
+}
+.banner-imagem img {
+    height: auto;
+}
+.categoria-card img,
+.produto-card img,
+.slide-home img,
+.pagina-cartoes img,
+.galeria-grid img,
+.sacola-item img {
+    background: #fff9e6;
+    padding: 8px;
+}
+.logo img,
+.rodape-logo img {
+    background: transparent;
+    padding: 0;
+}
+.catalogo .produto-card:hover img,
+.categoria-card:hover img,
+.banner-imagem img:hover {
+    transform: none;
+}
+.sobre-bloco img,
+.confeitaria-intro img {
+    height: auto;
+    max-height: none;
+}
+:focus-visible {
+    outline: 3px solid #00bfff;
+    outline-offset: 5px;
+}
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+.menu a {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+}
+.botao-musica {
+    width: auto;
+    min-width: 48px;
+    padding: 0 14px;
+    border-radius: 24px;
+    font-size: 14px;
+    gap: 6px;
+}
+.produto-info p,
+.pagina-cartoes p {
+    line-height: 1.6;
+}
+@media (max-width: 600px) {
+    .slide-home img {
+        height: 260px;
+    }
+    .botao-musica {
+        width: auto;
+        font-size: 13px;
+    }
+    .banner-imagem {
+        translate: none !important;
+    }
+}
+

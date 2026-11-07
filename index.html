@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aurora Noel | Início</title>
+
+        <link rel="icon" href="img/logo.png" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/responsivo.css" />
+        <link rel="stylesheet" href="css/paginas.css" />
+
+        <link rel="stylesheet" href="css/acabamento.css" />
+        <link rel="stylesheet" href="css/evolucao.css" />
+        <link rel="stylesheet" href="css/rolagem.css">
+<link rel="stylesheet" href="css/compra-controles.css">
+<link rel="stylesheet" href="css/animacoes.css">
+    <script src="js/efeitos.js"></script>
+    <link rel="stylesheet" href="css/efeitos.css">
+</head>
+
+    <body class="pagina-index">
+        <!-- CABEÇALHO DO SITE -->
+        <header>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Logo Aurora Noel" />
+                <span>Aurora Noel</span>
+            </a>
+
+            <button id="botao-musica" class="botao-musica" type="button">🔇</button>
+
+            <nav class="menu">
+                <a href="index.html" class="ativo">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="sobre.html">Sobre nós</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="contato.html">Contato</a>
+                <a href="colecao.html">Coleção</a>
+                <a href="confeitaria.html">Nossa Confeitaria</a>
+            </nav>
+
+            <div class="cordao-natalino" aria-hidden="true"></div>
+        </header>
+
+        <main>
+            <!-- Cena parallax: três planos ilustrados acompanham a rolagem. -->
+            <section class="cena-percurso" aria-label="Boas-vindas à Aurora Noel">
+                <div class="cena-fixa">
+                    <canvas id="fogos-home-esquerda" class="fogos fogos-home fogos-home-esquerda" aria-hidden="true"></canvas>
+                    <canvas id="fogos-home-direita" class="fogos fogos-home fogos-home-direita" aria-hidden="true"></canvas>
+                    <img class="cena-plano cena-montanhas" src="img/aldeia-smurfs-suave.webp" alt="" data-velocidade="0.12" aria-hidden="true">
+                    <div class="cena-titulo">
+                        <h1>Um Natal encantado.</h1>
+                        <p class="cena-subtitulo">A contagem para a noite mais mágica do ano já começou.</p>
+                        <div class="contador contador-cena" aria-label="Contagem regressiva para o Natal na página inicial">
+                            <div class="tempo tempo-cena">
+                                <span data-contador-natal="dias">00</span>
+                                <p>Dias</p>
+                            </div>
+                            <div class="tempo tempo-cena">
+                                <span data-contador-natal="horas">00</span>
+                                <p>Horas</p>
+                            </div>
+                            <div class="tempo tempo-cena">
+                                <span data-contador-natal="minutos">00</span>
+                                <p>Minutos</p>
+                            </div>
+                            <div class="tempo tempo-cena">
+                                <span data-contador-natal="segundos">00</span>
+                                <p>Segundos</p>
+                            </div>
+                        </div>
+                        <a class="cena-botao" href="produtos.html">Explorar produtos <span aria-hidden="true">↗</span></a>
+                    </div>
+                    <img class="cena-plano cena-pinheiros" src="img/aurora-pinheiros.webp" alt="" data-velocidade="0.55" aria-hidden="true">
+                    <div class="cena-dica" aria-hidden="true">ROLE PARA DESCOBRIR <span>↓</span></div>
+                </div>
+            </section>
+
+            <!-- SLIDESHOW DE DESTAQUES - acréscimo da continuação do projeto -->
+            <section class="slideshow-home" aria-label="Destaques de Natal">
+                <div class="slideshow-home-cabecalho">
+                    <span>✨ ESPECIAL AURORA NOEL ✨</span>
+                    <h2>Ideias para viver o Natal</h2>
+                </div>
+                <div class="slideshow-home-janela">
+                    <article class="slide-home ativo" aria-hidden="false">
+                        <img src="img/kit-presente.webp" alt="Kit de presente natalino com laço" />
+                        <div>
+                            <span>Presentes com carinho</span>
+                            <h3>Surpreenda quem você ama</h3>
+                            <p>
+                                Encontre ideias para tornar o momento de presentear ainda mais
+                                especial.
+                            </p>
+                            <a href="produtos.html">Ver produtos →</a>
+                        </div>
+                    </article>
+                    <article class="slide-home" aria-hidden="true">
+                        <img src="img/arvore.webp" alt="Árvore de Natal decorada com enfeites" />
+                        <div>
+                            <span>Decoração de Natal</span>
+                            <h3>Prepare sua casa para celebrar</h3>
+                            <p>
+                                Pequenos detalhes ajudam a criar uma lembrança bonita para toda a
+                                família.
+                            </p>
+                            <a href="colecao.html">Ver coleção →</a>
+                        </div>
+                    </article>
+                    <article class="slide-home" aria-hidden="true">
+                        <img
+                            src="img/panetone-tradicional.webp"
+                            alt="Panetone tradicional com frutas cristalizadas"
+                        />
+                        <div>
+                            <span>Sabores de Natal</span>
+                            <h3>O sabor da ceia em família</h3>
+                            <p>
+                                Descubra doces e delícias para compartilhar nos encontros de fim de
+                                ano.
+                            </p>
+                            <a href="confeitaria.html">Conhecer confeitaria →</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="slideshow-home-controles">
+                    <button id="anterior-slide" type="button" aria-label="Destaque anterior">
+                        ❮
+                    </button>
+                    <span id="indicador-slide" aria-live="polite">1 / 3</span>
+                    <button id="proximo-slide" type="button" aria-label="Próximo destaque">
+                        ❯
+                    </button>
+                </div>
+            </section>
+
+            <!-- CATEGORIAS DA LOJA -->
+            <section class="categorias">
+                <h2>Explore a Magia do Natal</h2>
+                <p>Encontre tudo para tornar seu Natal inesquecível.</p>
+
+                <div class="categorias-container">
+                    <a href="produtos.html?categoria=confeitaria" class="categoria-card">
+                        <img src="img/confeitaria.png" alt="Confeitaria natalina" />
+                        <h3>Confeitaria</h3>
+                    </a>
+
+                    <a href="produtos.html?categoria=moda" class="categoria-card">
+                        <img src="img/moda.png" alt="Moda natalina" />
+                        <h3>Moda</h3>
+                    </a>
+
+                    <a href="produtos.html?categoria=perfumes" class="categoria-card">
+                        <img src="img/perfumes.png" alt="Perfumes" />
+                        <h3>Perfumes</h3>
+                    </a>
+
+                    <a href="produtos.html?categoria=decoracao" class="categoria-card">
+                        <img src="img/decoracao.png" alt="Decorações natalinas" />
+                        <h3>Decoração</h3>
+                    </a>
+
+                    <a href="produtos.html?categoria=presentes" class="categoria-card">
+                        <img src="img/presentes.png" alt="Presentes natalinos" />
+                        <h3>Presentes</h3>
+                    </a>
+                </div>
+            </section>
+
+            <!-- PRODUTOS EM DESTAQUE -->
+            <section class="destaques">
+                <h2>Nossos Destaques de Natal</h2>
+                <p>Presentes especiais para momentos inesquecíveis.</p>
+                <div class="destaques-container" id="lista-destaques"></div>
+                <a href="produtos.html" class="botao-ver-todos">Ver todos os produtos</a>
+            </section>
+
+
+            <!-- DIFERENCIAIS DA AURORA NOEL -->
+            <section class="diferenciais">
+                <h2>Por que escolher a Aurora Noel?</h2>
+                <p>Mais do que presentes, entregamos a magia do Natal.</p>
+
+                <div class="diferenciais-container">
+                    <article class="diferencial-card">
+                        <span class="diferencial-icone">🎁</span>
+                        <h3>Presentes Especiais</h3>
+                        <p>Surpreenda quem você ama com produtos encantadores.</p>
+                    </article>
+
+                    <article class="diferencial-card">
+                        <span class="diferencial-icone">🚚</span>
+                        <h3>Entrega com Carinho</h3>
+                        <p>Cuidado e dedicação em cada pedido.</p>
+                    </article>
+
+                    <article class="diferencial-card">
+                        <span class="diferencial-icone">🔒</span>
+                        <h3>Compra Segura</h3>
+                        <p>Uma experiência de compra tranquila e confiável.</p>
+                    </article>
+
+                    <article class="diferencial-card">
+                        <span class="diferencial-icone">✨</span>
+                        <h3>Magia do Natal</h3>
+                        <p>Transforme pequenos momentos em grandes memórias.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- RODAPÉ DA AURORA NOEL -->
+        <footer class="rodape">
+            <div class="rodape-container">
+                <!-- MARCA -->
+                <div class="rodape-coluna">
+                    <a href="index.html" class="rodape-logo">
+                        <img src="img/logo.png" alt="Logo Aurora Noel" />
+                        <span>Aurora Noel</span>
+                    </a>
+                    <p>
+                        Espalhando a magia do Natal com presentes, sabores e momentos inesquecíveis.
+                    </p>
+                </div>
+
+                <!-- NAVEGAÇÃO -->
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="sobre.html">Sobre nós</a>
+                    <a href="ofertas.html">Ofertas</a>
+                </div>
+
+                <!-- EXPLORE -->
+                <div class="rodape-coluna">
+                    <h3>Explore</h3>
+                    <a href="colecao.html">Coleção</a>
+                    <a href="confeitaria.html">Nossa Confeitaria</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+
+                <!-- MENSAGEM -->
+                <div class="rodape-coluna">
+                    <h3>Espírito Natalino</h3>
+                    <p>Que cada presente seja um sorriso e cada momento uma lembrança especial.</p>
+                    <span class="rodape-decoracao">🎄 ✨ 🎁</span>
+                </div>
+            </div>
+
+            <div class="rodape-inferior">
+                <p>&copy; 2026 Aurora Noel.</p>
+            </div>
+        </footer>
+
+        <audio id="musica-natal" src="audio/natal.mp3"></audio>
+        <audio id="som-sino" src="audio/sino.mp3"></audio>
+
+        <script src="js/dados-produtos.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/home.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/rolagem.js"></script>
+</body>
+</html>

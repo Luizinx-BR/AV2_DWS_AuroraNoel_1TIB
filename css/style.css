@@ -1,0 +1,905 @@
+/* =========================================
+   CORES DA AURORA NOEL
+========================================= */
+:root {
+    --verde: #039f75d4;
+    --vermelho: #d62828;
+    --amarelo: #fff0b3;
+    --dourado: #d6a33d;
+    --azul-brilho: #00bfff;
+}
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    overflow-x: clip;
+    overflow-y: auto;
+    scrollbar-width: auto;
+    scrollbar-color: var(--dourado) var(--verde);
+}
+
+body {
+    background-color: var(--vermelho);
+    color: var(--amarelo);
+    font-family: Arial, sans-serif;
+    overflow-x: clip;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* =========================================
+   CORDÃO DE LUZES NATALINAS
+========================================= */
+.cordao-natalino {
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 100%;
+    height: 18px;
+    z-index: 1001;
+    pointer-events: none;
+    background: transparent;
+    overflow: visible;
+}
+
+/* FIO PRETO ENTRELAÇADO NA LINHA DOURADA */
+.cordao-natalino::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='18' viewBox='0 0 80 18'%3E%3Cpath d='M0 9 Q10 3 20 9 Q30 15 40 9 Q50 3 60 9 Q70 15 80 9' fill='none' stroke='%230B0B0B' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 80px 18px;
+}
+
+/* LÂMPADAS COLORIDAS */
+.lampada-natal {
+    position: absolute;
+    width: 8px;
+    height: 13px;
+    background-color: var(--cor-luz);
+    border-radius: 50% 50% 45% 45%;
+    box-shadow:
+        0 0 7px var(--cor-luz),
+        0 0 15px var(--cor-luz);
+    transform: translateX(-50%) rotate(var(--inclinacao));
+    transform-origin: center top;
+    animation: piscar-lampada 1.6s infinite alternate;
+    animation-delay: var(--atraso);
+}
+
+/* ENCAIXE DAS LÂMPADAS */
+.lampada-natal::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 2px;
+    width: 4px;
+    height: 5px;
+    background-color: #183b2b;
+    border-radius: 2px;
+}
+
+/* ANIMAÇÃO DAS LUZINHAS */
+@keyframes piscar-lampada {
+    0% {
+        opacity: 0.45;
+        filter: brightness(0.7);
+    }
+
+    100% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 90px;
+    padding: 10px 5%;
+    background-color: var(--verde);
+    border-bottom: 3px solid rgb(251, 239, 17);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    overflow: visible;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: bold;
+    white-space: nowrap;
+    transform-origin: left center;
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease,
+        text-shadow 0.4s ease;
+}
+
+.logo img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    transition: filter 0.4s ease;
+}
+
+/* ANIMAÇÃO DA LOGO */
+.logo:hover {
+    transform: scale(1.08);
+    color: #ffe55c;
+    text-shadow:
+        0 0 8px #ffd700,
+        0 0 18px #ffd700,
+        0 0 30px #ffea70;
+}
+
+.logo:hover img {
+    filter: drop-shadow(0 0 8px #ffd700) drop-shadow(0 0 15px #ffe55c);
+}
+
+/* MENU DE NAVEGAÇÃO */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+/* BRILHO DOS LINKS */
+.menu a:hover,
+.menu a.ativo {
+    color: var(--azul-brilho);
+    text-shadow:
+        0 0 8px var(--azul-brilho),
+        0 0 18px var(--azul-brilho);
+}
+
+/* LINHA TRICOLOR */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00bfff 0%, #ff3030 50%, #00ff88 100%);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover::after,
+.menu a.ativo::after {
+    transform: scaleX(1);
+}
+
+/* =========================================
+   BANNER PRINCIPAL
+========================================= */
+.banner {
+    width: 100%;
+    min-height: 550px;
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(135deg, #d62828, #a71922);
+}
+
+/* TEXTO DO LADO ESQUERDO */
+.banner-conteudo {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+}
+
+/* TÍTULO */
+.banner h1 {
+    color: whitesmoke;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* DESCRIÇÃO */
+.banner p {
+    max-width: 580px;
+    margin: 0 auto 30px;
+    color: whitesmoke;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+/* BOTÃO */
+.botao-banner {
+    display: inline-block;
+    padding: 16px 35px;
+    background-color: #ffd166;
+    color: var(--verde);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid #ffe08a;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+}
+
+.botao-banner:hover {
+    background-color: var(--azul-brilho);
+    color: white;
+    border-color: var(--azul-brilho);
+    box-shadow:
+        0 0 10px var(--azul-brilho),
+        0 0 25px var(--azul-brilho);
+    transform: scale(1.08);
+}
+
+/* IMAGEM DO LADO DIREITO */
+.banner-imagem {
+    flex: 1;
+    min-width: 0;
+}
+
+.banner-imagem img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border: 3px solid #ffd166;
+    border-radius: 30px;
+    box-shadow: 0 0 25px rgba(255, 209, 102, 0.3);
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.banner-imagem img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 35px rgb(251, 239, 17);
+}
+
+/* =========================================
+   BARRA DE ROLAGEM VERTICAL
+========================================= */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--verde);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(251, 239, 17);
+    border-radius: 10px;
+    border: 2px solid var(--verde);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(251, 239, 17);
+}
+
+/* =========================================
+   CATEGORIAS DA LOJA
+========================================= */
+.categorias {
+    padding: 80px 5%;
+    background: linear-gradient(180deg, #a71922, #7d1420);
+    text-align: center;
+}
+
+.categorias h2 {
+    color: #ffe08a;
+    font-size: 38px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.35);
+}
+
+.categorias > p {
+    color: whitesmoke;
+    font-size: 19px;
+    margin-bottom: 45px;
+}
+
+/* ORGANIZAÇÃO DOS CARDS */
+.categorias-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* CARDS */
+.categoria-card {
+    display: block;
+    min-width: 0;
+    padding: 12px;
+    background: #006b4f;
+    border: 2px solid #d6a33d;
+    border-radius: 20px;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* IMAGENS */
+.categoria-card img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* NOMES DAS CATEGORIAS */
+.categoria-card h3 {
+    color: #ffe08a;
+    font-size: 20px;
+    margin: 18px 0 8px;
+    transition: color 0.3s ease;
+}
+
+/* ANIMAÇÕES */
+.categoria-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.categoria-card:hover img {
+    transform: scale(1.04);
+}
+
+.categoria-card:hover h3 {
+    color: #00bfff;
+}
+
+/* =========================================
+   PRODUTOS EM DESTAQUE
+========================================= */
+.destaques {
+    padding: 80px 5%;
+    background: linear-gradient(180deg, #7d1420, #a71922);
+    text-align: center;
+}
+
+.destaques h2 {
+    color: #ffe08a;
+    font-size: 38px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.35);
+}
+
+.destaques > p {
+    color: whitesmoke;
+    font-size: 19px;
+    margin-bottom: 45px;
+}
+
+/* ORGANIZAÇÃO DOS PRODUTOS */
+.destaques-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 45px;
+}
+
+/* CARD DO PRODUTO */
+.produto-card {
+    position: relative;
+    padding: 15px;
+    background-color: var(--verde);
+    border: 2px solid var(--dourado);
+    border-radius: 20px;
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+/* IMAGEM DO PRODUTO */
+.produto-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+/* NOME */
+.produto-card h3 {
+    color: #ffe08a;
+    font-size: 21px;
+    margin: 18px 0 12px;
+}
+
+/* PREÇO */
+.produto-preco {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* SELO DE OFERTA */
+.produto-selo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 8px 14px;
+    background-color: #d62828;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/* BOTÃO DO PRODUTO */
+.produto-botao {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #ffd166;
+    color: var(--verde);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.produto-botao:hover {
+    background-color: var(--azul-brilho);
+    color: white;
+    box-shadow: 0 0 18px var(--azul-brilho);
+    transform: scale(1.05);
+}
+
+/* BOTÃO VER TODOS */
+.botao-ver-todos {
+    display: inline-block;
+    padding: 16px 38px;
+    background-color: #ffd166;
+    color: var(--verde);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.botao-ver-todos:hover {
+    background-color: var(--azul-brilho);
+    color: white;
+    box-shadow: 0 0 20px var(--azul-brilho);
+    transform: scale(1.06);
+}
+
+/* =========================================
+   CONTAGEM REGRESSIVA PARA O NATAL
+========================================= */
+.contagem-natal {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #006b4f, #003d2d);
+    text-align: center;
+    border-top: 3px solid #d6a33d;
+    border-bottom: 3px solid #d6a33d;
+}
+
+.contagem-natal h2 {
+    color: #ffd166;
+    font-size: 42px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.35);
+}
+
+.contagem-natal > p {
+    color: whitesmoke;
+    font-size: 20px;
+    margin-bottom: 45px;
+}
+
+/* ORGANIZAÇÃO DO CONTADOR */
+.contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* QUADRADOS DOS NÚMEROS */
+.tempo {
+    width: 150px;
+    padding: 25px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid #d6a33d;
+    border-radius: 18px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tempo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.45);
+}
+
+/* NÚMEROS */
+.tempo span {
+    display: block;
+    color: #ffd166;
+    font-size: 48px;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+}
+
+/* DIAS, HORAS, MINUTOS E SEGUNDOS */
+.tempo p {
+    color: whitesmoke;
+    font-size: 16px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   FOGOS DE ARTIFÍCIO DO CONTADOR
+========================================= */
+
+.contagem-natal {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* MANTER O TEXTO E O CONTADOR NA FRENTE */
+.contagem-natal > h2,
+.contagem-natal > p,
+.contagem-natal > .contador {
+    position: relative;
+    z-index: 2;
+}
+
+/* ÁREA DOS FOGOS */
+.fogos {
+    position: absolute;
+    top: 8%;
+    width: 22%;
+    height: 84%;
+    display: block;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fogos-esquerda {
+    left: 2%;
+}
+
+.fogos-direita {
+    right: 2%;
+}
+
+/* =========================================
+   DIFERENCIAIS DA AURORA NOEL
+========================================= */
+
+/* SEÇÃO PRINCIPAL */
+.diferenciais {
+    padding: 90px 5%;
+    background: linear-gradient(135deg, #a71922, #7d1420);
+    text-align: center;
+    border-bottom: 3px solid #d6a33d;
+}
+
+/* TÍTULO */
+.diferenciais h2 {
+    color: #ffe08a;
+    font-size: 38px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.35);
+}
+
+/* SUBTÍTULO */
+.diferenciais > p {
+    color: whitesmoke;
+    font-size: 19px;
+    margin-bottom: 50px;
+}
+
+/* ORGANIZAÇÃO DOS CARDS */
+.diferenciais-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.diferencial-card {
+    position: relative;
+    padding: 40px 22px;
+    background: linear-gradient(145deg, #006b4f, #004d39);
+    border: 2px solid #d6a33d;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.diferencial-card:hover {
+    transform: translateY(-12px);
+    border-color: #ffd166;
+    box-shadow:
+        0 0 15px rgba(255, 215, 0, 0.35),
+        0 0 30px rgba(255, 215, 0, 0.15);
+}
+
+/* ÍCONES */
+.diferencial-icone {
+    display: block;
+    font-size: 52px;
+    margin-bottom: 25px;
+    transition: transform 0.4s ease;
+}
+
+/* ANIMAÇÃO DOS ÍCONES */
+.diferencial-card:hover .diferencial-icone {
+    transform: scale(1.2) rotate(8deg);
+}
+
+/* NOME DO DIFERENCIAL */
+.diferencial-card h3 {
+    color: #ffd166;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+/* DESCRIÇÃO */
+.diferencial-card p {
+    color: whitesmoke;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* BRILHO DECORATIVO */
+.diferencial-card::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.12), transparent 70%);
+    pointer-events: none;
+}
+
+/* =========================================
+   RODAPÉ DA AURORA NOEL
+========================================= */
+
+/* RODAPÉ PRINCIPAL */
+.rodape {
+    background: linear-gradient(135deg, #004d39, #002d22);
+    border-top: 3px solid #d6a33d;
+    color: whitesmoke;
+    padding: 70px 5% 0;
+}
+
+/* ORGANIZAÇÃO DAS COLUNAS */
+.rodape-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 45px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 55px;
+}
+
+/* CADA COLUNA */
+.rodape-coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+/* LOGO E NOME */
+.rodape-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffd166;
+    font-size: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.rodape-logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+}
+
+/* ANIMAÇÃO DA LOGO */
+.rodape-logo:hover {
+    transform: scale(1.05);
+}
+
+/* TÍTULOS DAS COLUNAS */
+.rodape-coluna h3 {
+    color: #ffd166;
+    font-size: 21px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+/* TEXTOS */
+.rodape-coluna p {
+    color: #eaeaea;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 310px;
+}
+
+/* LINKS */
+.rodape-coluna > a:not(.rodape-logo) {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 15px;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+/* EFEITO DOS LINKS */
+.rodape-coluna > a:not(.rodape-logo):hover {
+    color: #00bfff;
+    transform: translateX(6px);
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+}
+
+/* EMOJIS NATALINOS */
+.rodape-decoracao {
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-top: 10px;
+    animation: brilho-rodape 3s ease-in-out infinite alternate;
+}
+
+/* BRILHO SUAVE DOS EMOJIS */
+@keyframes brilho-rodape {
+    from {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+/* LINHA INFERIOR */
+.rodape-inferior {
+    border-top: 1px solid rgba(255, 209, 102, 0.4);
+    padding: 25px 0;
+    text-align: center;
+}
+
+/* DIREITOS AUTORAIS */
+.rodape-inferior p {
+    color: #dddddd;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* BOTÃO DE MÚSICA NATALINA */
+
+.botao-musica {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #d6a33d, #ffe08a);
+    border: 2px solid #fff0b3;
+    border-radius: 50%;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    box-shadow: 0 0 12px rgba(255, 209, 102, 0.45);
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.botao-musica:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 22px rgba(255, 209, 102, 0.85);
+}
+
+.botao-musica:focus-visible {
+    outline: 3px solid #00bfff;
+    outline-offset: 4px;
+}
+
+/* IMAGENS DOS PRODUTOS - INDEX */
+
+.destaques-container .produto-card img {
+    width: 100%;
+    height: 235px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #ffffff;
+}

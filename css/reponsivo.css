@@ -1,0 +1,505 @@
+/* =========================================
+   RESPONSIVIDADE - AURORA NOEL
+========================================= */
+
+/* NOTEBOOKS E TELAS MENORES */
+@media (max-width: 1200px) {
+    header {
+        padding: 12px 3%;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .categorias-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .diferenciais-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rodape-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        padding: 12px 4% 18px;
+        gap: 12px;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .banner {
+        flex-direction: column;
+        padding: 55px 5%;
+        gap: 35px;
+    }
+
+    .banner-conteudo,
+    .banner-imagem {
+        width: 100%;
+    }
+
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner-imagem img {
+        height: 350px;
+    }
+
+    .destaques-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fogos {
+        width: 24%;
+    }
+
+    .tempo {
+        width: 130px;
+        padding: 22px 12px;
+    }
+
+    .tempo span {
+        font-size: 40px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    header {
+        padding: 10px 4% 18px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .logo img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .menu {
+        gap: 8px 14px;
+    }
+
+    .menu a {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+
+    /* BANNER */
+    .banner {
+        min-height: auto;
+        padding: 45px 5%;
+        gap: 30px;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .banner-imagem img {
+        height: 250px;
+        border-radius: 20px;
+    }
+
+    .botao-banner {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    /* CATEGORIAS */
+    .categorias {
+        padding: 60px 5%;
+    }
+
+    .categorias h2,
+    .destaques h2,
+    .diferenciais h2 {
+        font-size: 29px;
+    }
+
+    .categorias > p,
+    .destaques > p,
+    .diferenciais > p {
+        font-size: 16px;
+    }
+
+    .categorias-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .categoria-card {
+        padding: 9px;
+    }
+
+    .categoria-card img {
+        height: 150px;
+    }
+
+    .categoria-card h3 {
+        font-size: 16px;
+    }
+
+    /* PRODUTOS */
+    .destaques {
+        padding: 60px 5%;
+    }
+
+    .destaques-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .produto-card {
+        padding: 10px;
+    }
+
+    .produto-card img {
+        height: 170px;
+    }
+
+    .produto-card h3 {
+        font-size: 17px;
+    }
+
+    .produto-preco {
+        font-size: 19px;
+    }
+
+    .produto-botao {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .produto-selo {
+        top: 17px;
+        left: 17px;
+        padding: 5px 9px;
+        font-size: 10px;
+    }
+
+    /* CONTAGEM REGRESSIVA */
+    .contagem-natal {
+        padding: 65px 4%;
+    }
+
+    .contagem-natal h2 {
+        font-size: 30px;
+    }
+
+    .contagem-natal > p {
+        font-size: 16px;
+    }
+
+    .contador {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .tempo {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .tempo span {
+        font-size: 38px;
+    }
+
+    .tempo p {
+        font-size: 12px;
+    }
+
+    /* FOGOS NAS LATERAIS */
+    .fogos {
+        width: 25%;
+        height: 70%;
+        top: 20%;
+        opacity: 0.7;
+    }
+
+    .fogos-esquerda {
+        left: 0;
+    }
+
+    .fogos-direita {
+        right: 0;
+    }
+
+    /* DIFERENCIAIS */
+    .diferenciais {
+        padding: 65px 5%;
+    }
+
+    .diferenciais-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .diferencial-card {
+        padding: 28px 12px;
+    }
+
+    .diferencial-icone {
+        font-size: 40px;
+    }
+
+    .diferencial-card h3 {
+        font-size: 17px;
+    }
+
+    .diferencial-card p {
+        font-size: 13px;
+    }
+
+    /* RODAPÉ */
+    .rodape {
+        padding: 55px 5% 0;
+    }
+
+    .rodape-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 20px;
+    }
+
+    .rodape-logo {
+        font-size: 19px;
+    }
+
+    .rodape-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .rodape-coluna h3 {
+        font-size: 18px;
+    }
+
+    .rodape-coluna p,
+    .rodape-coluna > a:not(.rodape-logo) {
+        font-size: 13px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 380px) {
+    .menu {
+        gap: 7px 10px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .banner h1 {
+        font-size: 26px;
+    }
+
+    .categoria-card img {
+        height: 125px;
+    }
+
+    .produto-card img {
+        height: 135px;
+    }
+
+    .produto-card h3 {
+        font-size: 15px;
+    }
+
+    .produto-preco {
+        font-size: 17px;
+    }
+
+    .diferenciais-container {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .botao-musica {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+        margin: 5px auto;
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE - PÁGINA PRODUTOS
+========================================== */
+
+@media (max-width: 1200px) {
+    .catalogo .destaques-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .catalogo-banner {
+        min-height: 350px;
+        padding: 70px 5%;
+    }
+
+    .catalogo-filtros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .catalogo-pesquisa {
+        grid-column: 1 / -1;
+    }
+
+    .catalogo .destaques-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .catalogo-banner {
+        min-height: 310px;
+        padding: 55px 5%;
+    }
+
+    .catalogo-banner p {
+        font-size: 15px;
+    }
+
+    .catalogo-categorias,
+    .catalogo {
+        padding: 55px 4%;
+    }
+
+    .catalogo-categorias-container {
+        gap: 10px;
+    }
+
+    .catalogo-categoria {
+        padding: 11px 15px;
+        font-size: 13px;
+    }
+
+    .catalogo-filtros {
+        padding: 18px;
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo-pesquisa {
+        grid-column: auto;
+    }
+
+    .catalogo .destaques-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .catalogo .produto-card img {
+        height: 160px;
+    }
+
+    .catalogo .produto-info {
+        padding: 15px 10px;
+    }
+
+    .catalogo .produto-info h3 {
+        font-size: 15px;
+    }
+
+    .catalogo .produto-preco {
+        font-size: 19px;
+    }
+
+    .catalogo .produto-botao {
+        padding: 11px 8px;
+        font-size: 12px;
+    }
+
+    .catalogo-mensagem {
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 380px) {
+    .catalogo .destaques-container {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo .produto-card img {
+        height: 230px;
+    }
+}
+
+/* SACOLA NO CELULAR */
+
+@media (max-width: 600px) {
+    .botao-sacola {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .sacola-cabecalho {
+        padding: 18px;
+    }
+
+    .sacola-cabecalho h2 {
+        font-size: 20px;
+    }
+
+    .itens-sacola {
+        padding: 15px;
+    }
+}
+
+/* IMAGENS RESPONSIVAS SEM CORTES */
+
+@media (max-width: 600px) {
+    .destaques-container .produto-card img,
+    .catalogo .produto-card img {
+        height: 170px;
+        object-fit: contain;
+        object-position: center;
+    }
+}
